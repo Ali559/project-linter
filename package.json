@@ -1,0 +1,39 @@
+{
+  "name": "project-linter",
+  "version": "1.0.0",
+  "description": "a tiny cli tool to ensure the naming conventions of folders and files in your project. no Dependencies",
+  "author": {
+    "name": "Ali Barznji",
+    "email": "ali99yasin@gmail.com",
+    "github": "https://github.com/Ali559",
+    "linkedin": "https://www.linkedin.com/in/ali-barznji-36b664325/"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [],
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "build": "tsc",
+    "format": "prettier --write .",
+    "ci": "npm run build && npm run format && npm run test",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "@types/node": "^24.1.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}
