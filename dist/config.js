@@ -1,17 +1,16 @@
+import { lint } from "./index.js";
 import { defaultConfig } from "./types/config.js";
 let globConfig = { ...defaultConfig };
 export function defineConfig(config) {
-  if (config) {
-    globConfig = config;
-  }
-  return globConfig;
+    if (config) {
+        globConfig = config;
+    }
+    return globConfig;
 }
 export function getConfig() {
-  return globConfig;
+    return globConfig;
 }
-export function lint() {
-  const { rules, extensions, ignore, fix, rootDir } = getConfig();
-  // TODO: implement linting logic
-  console.log("Linting with rules:", rules);
+export async function start() {
+    lint();
 }
 //# sourceMappingURL=config.js.map
